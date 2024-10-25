@@ -29,10 +29,10 @@
 # print(even_sum)
 
 # 8
-number = int(input("Enter a number: "))
+# number = int(input("Enter a number: "))
 
-for i in range(number + 1):
-    if i % 2 == 0:
-        print(str(i) + "is even")
-    else:
-        print(str(i) + "is odd")
+# for i in range(number + 1):
+#     if i % 2 == 0:
+#         print(str(i) + "is even")
+#     else:
+#         print(str(i) + "is odd")
