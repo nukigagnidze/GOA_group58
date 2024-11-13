@@ -1,0 +1,1 @@
+# aq sololerni gvqonda

@@ -2,13 +2,24 @@
 # sololerin iyo
 
 # 2
+# strings_list = ["Vashli", "5.5", "10", "Nika", "Luka"]
+
+# for i in strings_list:
+#     print(len(i))
 
 # 3
-# counter = 0
-# while counter < 21:
-#       print(counter)
+# numbers = [1,2,3,4,5,6,7,8,9,10, 100 , 238, 8756]
 
-#       counter += 1
+# sum = 0
+# index = 0
+
+# while index != len(numbers):
+#     if numbers[index] % 2 == 0:
+#         sum += numbers[index]
+
+#     index += 1
+
+# print(sum)
 
 # 4
 # names = ["ani", "anamaria", "anuki", "akako"]
@@ -21,11 +32,19 @@
 # print(numbers[1:5])
 
 # 6
-# numbers = int(input("Please enter your number: "))
+# number = int(input("Please enter a number: ")) # 5
 
-# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# result = []
 
-# print(numbers[1;8])
+# for num in range(1, number):
+#     dividers = []
+#     for i in range(1, num + 1):
+#         if num % i == 0:
+#             dividers.append(i)
+#     if len(dividers) == 2:
+#         result.append(num)
+    
+# print(result)
 
 # 7
 # num1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
