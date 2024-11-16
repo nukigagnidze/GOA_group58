@@ -1,1 +1,1 @@
-# aq sololerni gvqonda
+# codewarsi gvqonda

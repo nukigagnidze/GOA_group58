@@ -1,0 +1,37 @@
+img {
+    height: 300px;
+    width: 300px;
+}
+
+h1 {
+    background-color: rgb(44, 38, 223);
+    color: rgb(255, 255, 255);
+}
+
+p {
+    background-color: rgb(30, 82, 82);
+    color: rgb(255, 255, 255);
+}
+
+button {
+    color: rgb(43, 43, 213);
+}
+
+img {
+    height: 300px;
+    width: 300px;
+}
+
+h2 {
+    background-color: rgb(168, 13, 150);
+    color: rgb(255, 255, 255);
+}
+
+p1 {
+    background-color: rgb(113, 49, 172);
+    color: rgb(253, 254, 255);
+}
+
+button {
+    color: rgb(203, 20, 185);
+}
