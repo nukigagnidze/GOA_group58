@@ -7,3 +7,4 @@ def manual_count(nums_list, number):
     
     return count
 print(manual_count([1, 1, 1, 2, 3, 4, 5], 3))
+
