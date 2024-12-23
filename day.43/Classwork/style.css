@@ -1,0 +1,33 @@
+/* p {
+    color: #00ffff;
+}
+
+b {
+    color: #008000;
+}
+
+button {
+    color: aqua;
+} */
+
+/* p, b, button {
+    color: aqua;
+} */
+
+/* main {
+    color: #00ffff;
+} */
+
+p {
+    color: #ff0000;
+}
+
+button {
+    color: #008000;
+}
+
+main {
+    background-color: #0000ff;
+}
+
+
