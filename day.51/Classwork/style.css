@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  td {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #000;
+  }
+  /* Apply a green background to even numbers */
+  td.even {
+    background-color: green;
+    color: white;
+  }

@@ -1,0 +1,64 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link Color Change</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#" class="link">Click me</a>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link States Example</title>
+    <style>
+        /* Basic link style (link) */
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover state */
+        a:hover {
+            background-color: #007bff;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Active state */
+        a:active {
+            background-color: #0056b3;
+            color: white;
+            transform: scale(0.95);
+        }
+
+        /* Visited state */
+        a:visited {
+            color: #800080; /* Purple color for visited links */
+            font-style: italic;
+        }
+
+        /* Optional: Make it look better by adding a box-shadow on hover or active */
+        a:hover, a:active {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Link States Example</h1>
+    <p>Click on the link below to see the different states:</p>
+    <a href="https://www.example.com" target="_blank">Visit Example Website</a>
+</body>
+</html>

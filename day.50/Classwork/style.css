@@ -1,0 +1,12 @@
+Initial state of the link
+.link {
+    color: red;
+    text-decoration: none;
+  }
+  
+  /* When the link is clicked (tapped), it changes to green with underline */
+  .link:active {
+    color: green;
+    text-decoration: underline;
+    text-decoration-color: black;
+  }
