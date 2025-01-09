@@ -1,0 +1,30 @@
+.parent {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    background-color: rgb(55, 0, 255);
+}
+
+
+.child {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: rgb(242, 14, 174);
+}
+
+
+.child1 {
+    top: calc(100% - 100px); 
+    left: calc(50% - 50px); 
+}
+
+.child2 {
+    top: calc(100% - 100px); 
+    left: calc(50% - 50px); 
+}
+
+.child3 {
+    top: calc(100% - 100px); 
+    left: calc(50% - 50px); 
+}

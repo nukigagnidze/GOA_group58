@@ -1,0 +1,46 @@
+/* .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.green {
+    background-color: green;
+    align-self: center;
+}
+
+.red, .blue {
+    background-color: red;
+} */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+main {
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+    border: 5px solid black;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    border: 2px solid red;
+}
+
+.green {
+    align-self:center;
+}
