@@ -1,0 +1,48 @@
+body {
+    margin-left: 20%;
+    display: flex;
+    background-color: #cdcdea;
+}
+
+main {
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    margin-right: 1%;
+    height: 450px;
+    width: 400px;
+}
+
+button {
+    background-color: #037403;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: small;
+    color: #808080;
+}
+
+p {
+    color: #808080;
+}
+
+h3 {
+    color: #037403;
+}
+
+h4 {
+    text-decoration: line-through;
+    margin-left: 7%;
+}
+
+div {
+    display: flex;
+    color: #808080;
+}
+
