@@ -1,0 +1,111 @@
+<!-- 1 -->
+ <!-- /* static - ეს არის პოზიცია, რომელიც არის დეფოლტი. 
+   ელემენტი განლაგებულია ისე, როგორც ნორმალურად იყო (ანუ ნაკლებად კონტროლირებადი). 
+   top, bottom, left, right არ მოქმედებს */
+.element-static {
+    position: static;
+}
+
+/* relative - ეს პოზიცია გულისხმობს, რომ ელემენტი განლაგდება თავის ჩვეულ ადგილას, 
+   მაგრამ შესაძლებელია მისი გადაადგილება top, bottom, left, right კუთვნილებებით. 
+   გადაადგილება ხდება მისი ჩვეულებრივი ადგილიდან */
+.element-relative {
+    position: relative;
+    top: 10px;  /* 10px გადაადგილება მაღლა */
+    left: 20px; /* 20px გადაადგილება მარცხნივ */
+}
+
+ absolute - ამ პოზიციით, ელემენტი განლაგდება თავისი ყველაზე ახლო პოზიციონირებული (relative, absolute) პარიენტში. 
+   ელემენტი არ ახდენს გავლენას დანარჩენ კონტენტზე */
+.element-absolute {
+    position: absolute;
+    top: 50px;  /* 50px გადაადგილება ზემოთ */
+    left: 50px; /* 50px გადაადგილება მარცხნივ */
+}
+ -->
+
+ <!-- 2 -->
+  <!-- /* top - ადგენს ელემენტის განლაგებას ვერტიკალურად ზედა მხარეს */
+.element-top {
+    position: relative;
+    top: 20px; /* გადაადგილებს 20px მაღლა */
+}
+
+/* bottom - ადგენს ელემენტის განლაგებას ვერტიკალურად ქვედა მხარეს */
+.element-bottom {
+    position: relative;
+    bottom: 20px; /* გადაადგილებს 20px ქვემოთ */
+}
+
+/* left - ადგენს ელემენტის განლაგებას ჰორიზონტალურად მარცხენა მხარეს */
+.element-left {
+    position: relative;
+    left: 30px; /* გადაადგილებს 30px მარცხნივ */
+}
+
+/* right - ადგენს ელემენტის განლაგებას ჰორიზონტალურად მარჯვენა მხარეს */
+.element-right {
+    position: relative;
+    right: 30px; /* გადაადგილებს 30px მარჯვნივ */
+}
+ -->
+
+ <!-- 3 -->
+ <!DOCTYPE html>
+ <html lang="ka">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>პოზიციონირება საიტი</title>
+     <style>
+         /* საერთო სტილები */
+         body {
+             font-family: Arial, sans-serif;
+             background-color: #f0f0f0;
+             margin: 0;
+             padding: 0;
+         }
+ 
+         .container {
+             position: relative;
+             width: 100%;
+             height: 400px;
+             background-color: lightgray;
+         }
+ 
+         /* Static */
+         .element-static {
+             position: static;
+             background-color: lightblue;
+             padding: 20px;
+             margin: 10px;
+         }
+ 
+         /* Relative */
+         .element-relative {
+             position: relative;
+             top: 30px;
+             left: 50px;
+             background-color: lightcoral;
+             padding: 20px;
+         }
+ 
+         /* Absolute */
+         .element-absolute {
+             position: absolute;
+             top: 50px;
+             left: 50px;
+             background-color: lightgreen;
+             padding: 20px;
+         }
+     </style>
+ </head>
+ <body>
+     <div class="container">
+         <div class="element-static">Static პოზიცია</div>
+         <div class="element-relative">Relative პოზიცია</div>
+         <div class="element-absolute">Absolute პოზიცია</div>
+     </div>
+ </body>
+ </html>
+ 

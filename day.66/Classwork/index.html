@@ -1,0 +1,115 @@
+<!-- 1 -->
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>პოზიციონირება საიტი</title>
+    <style>
+        /* საერთო სტილები */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative; /* ეს მნიშვნელოვანია, რადგან absolute ელემენტი უნდა განლაგდეს ამ კონტეინერის ფარგლებში */
+            width: 100%;
+            height: 500px;
+            background-color: lightgray;
+            border: 2px solid #ccc;
+        }
+
+        /* პირველი ოთხი div */
+        .element {
+            background-color: lightblue;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .element-1 { background-color: lightblue; }
+        .element-2 { background-color: lightcoral; }
+        .element-3 { background-color: lightgreen; }
+        .element-4 { background-color: lightyellow; }
+
+        /* მე-5 div, რომელსაც დავაყენებთ position: relative */
+        .element-5 {
+            position: relative;
+            top: 20px;  /* გადაადგილება 20px */
+            left: 30px; /* 30px მარცხნივ */
+            background-color: lightpink;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="element element-1">Div 1</div>
+        <div class="element element-2">Div 2</div>
+        <div class="element element-3">Div 3</div>
+        <div class="element element-4">Div 4</div>
+        <div class="element element-5">Div 5 (Relative)</div> <!-- მე-5 div, რომელზეც relative იქნება გამოყენებული -->
+    </div>
+</body>
+</html>
+
+<!-- 2 -->
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>პოზიციონირება საიტი</title>
+    <style>
+        /* საერთო სტილები */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative; /* ეს მნიშვნელოვანია, რადგან absolute ელემენტი უნდა განლაგდეს ამ კონტეინერის ფარგლებში */
+            width: 100%;
+            height: 500px;
+            background-color: lightgray;
+            border: 2px solid #ccc;
+        }
+
+        /* პირველი ოთხი div */
+        .element {
+            background-color: lightblue;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .element-1 { background-color: lightblue; }
+        .element-2 { background-color: lightcoral; }
+        .element-3 { background-color: lightgreen; }
+        .element-4 { background-color: lightyellow; }
+
+        /* მე-5 div, რომელსაც დავაყენებთ position: absolute */
+        .element-5 {
+            position: absolute;
+            bottom: 10px;  /* მშობლის ქვედა მხარეს */
+            right: 10px;  /* მშობლის მარჯვენა მხარეს */
+            background-color: lightpink;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="element element-1">Div 1</div>
+        <div class="element element-2">Div 2</div>
+        <div class="element element-3">Div 3</div>
+        <div class="element element-4">Div 4</div>
+        <div class="element element-5">Div 5 (Absolute)</div> <!-- მე-5 div, რომელზეც absolute იქნება გამოყენებული -->
+    </div>
+</body>
+</html>
