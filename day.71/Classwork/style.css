@@ -1,0 +1,19 @@
+body {
+    background-color: #DAD2FF;
+}
+
+main {
+    background-color: rgb(255, 255, 255);
+    width: 330px;
+}
+
+button {
+    background-color: rgb(255, 0, 0);
+    height: 40px;
+    width: 150px;
+    margin-left: 85px;
+}
+
+button:hover {
+    background-color: white;
+}
