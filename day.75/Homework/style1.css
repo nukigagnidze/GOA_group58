@@ -1,0 +1,25 @@
+.wind-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2c3e50;
+    display: inline-block;
+    animation: wind 5s infinite;
+}
+
+@keyframes wind {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+    25% {
+        transform: translateX(100px) rotate(15deg);
+    }
+    50% {
+        transform: translateX(0) rotate(0deg);
+    }
+    75% {
+        transform: translateX(-100px) rotate(-15deg);
+    }
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+}

@@ -1,24 +1,24 @@
 # 1
-# name = input("Please enter your name: ")
-# print(name)
+name = input("Please enter your name: ")
+print(name)
 
-# surname = input("Please enter your surname: ")
-# print(surname)
+surname = input("Please enter your surname: ")
+print(surname)
 
-# age = input("Please enter your age: ")
-# print(age)
+age = input("Please enter your age: ")
+print(age)
 
-# email = input("Please enter your email: ")
-# print(email)
+email = input("Please enter your email: ")
+print(email)
 
 # 2
-# num1 = input("enter number 1: ")
-# num2 = input("enter number 2: ")
+num1 = input("enter number 1: ")
+num2 = input("enter number 2: ")
 
-# print(num1 + num2)
-# print(num1 - num2)
-# print(num1 * num2)
-# print(num1 / num2)
+print(num1 + num2)
+print(num1 - num2)
+print(num1 * num2)
+print(num1 / num2)
 
 
 # 3

@@ -17,12 +17,12 @@
 
 # % - დაგვიბრუნებს ნაშთს.
 # მაგალითად: 
-# 10 % 2 = 0;
-# 11 % 2 = 1
+10 % 2 = 0;
+11 % 2 = 1
 
-# print(type(10.3))
-# print(5 <= 10)
+print(type(10.3))
+print(5 <= 10)
 
-# result = 5 < 2 or 5 > 3
+result = 5 < 2 or 5 > 3
 
-# print(result)
+print(result)

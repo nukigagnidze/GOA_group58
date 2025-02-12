@@ -1,26 +1,26 @@
-# print(year % 100 != 0)
+print(year % 100 != 0)
 
 
-# print(5 ** 10)
-
-
-
+print(5 ** 10)
 
 
 
-# print(0.1 + 0.2)
-# print(400 % 100)
 
-# print(True and False and True and True or  False and True or False or True and True)
 
-# print(True and False) # false
-# print(False and True) # false
-# print(True or False) # true
-# print(False or True) # true
-# print(True and True) # true
-# print(True or True) # true
-# print(False and False) # false 
-# print(False or False) # false
+
+print(0.1 + 0.2)
+print(400 % 100)
+
+print(True and False and True and True or  False and True or False or True and True)
+
+print(True and False) # false
+print(False and True) # false
+print(True or False) # true
+print(False or True) # true
+print(True and True) # true
+print(True or True) # true
+print(False and False) # false 
+print(False or False) # false
 
 # 1
 # მომხმარებელს 2 რიცხვი შემოაქვს
