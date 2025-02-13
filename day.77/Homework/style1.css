@@ -1,0 +1,26 @@
+body {
+    background-color: #101922;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#loadingBarContainer {
+    width: 80%;
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#loadingBar {
+    width: 0;
+    height: 20px;
+    background-color: #0cf;
+    animation: loading 2s infinite;
+}
+@keyframes loading {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
