@@ -1,0 +1,21 @@
+@keyframes rotate-animation {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(90deg); }
+    50% { transform: rotate(180deg); }
+    75% { transform: rotate(270deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+.rotate-animation-example {
+    animation: rotate-animation 5s infinite;
+    background-color: lightblue;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    width: 100px;
+    height: 100px;
+    color: #0000ff;
+  }
+
