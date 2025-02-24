@@ -1,0 +1,73 @@
+<!-- 1 -->
+<!--Increment (++): ეს ოპერატორი ზრდის ცვლადის მნიშვნელობას ერთით. შეიძლება გამოყენებულ იქნას როგორც "pre-increment" ისე "post-increment" ფორმით:-->
+
+<!-- Decrement (--): ეს ოპერატორი ამცირებს ცვლადის მნიშვნელობას ერთით. ის გამოიყენება ასევე როგორც "pre-decrement" ისე "post-decrement": -->
+
+<!-- 2 -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        let x = 5;
+        x++; // x გახდება 6 (post-increment)
+        ++x; // x გახდება 7 (pre-increment)
+        x--; // x გახდება 6 (post-decrement)
+        --x; // x გახდება 5 (pre-decrement)
+    </script>
+ </body>
+ </html>
+
+ <!-- 3 -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        let num = 20;
+console.log(num++); // 20
+console.log(--num); // 19
+console.log(++num); // 20
+console.log(num++); // 20
+console.log(num++); // 20
+// ეს პირველად დაბეჭდავს num-ის მიმდინარე მნიშვნელობას (20), და მხოლოდ შემდეგ გაზრდის num-ის მნიშვნელობას. ამიტომ, პირველი გამონათქვამი დაბეჭდავს 20, ხოლო შემდეგ num გახდება 21.
+
+// console.log(--num): აქ, ჯერ num შემცირდება 1-ით (21 გახდება 20), შემდეგ კი დაბეჭდავს ახალ მნიშვნელობას (20).
+
+// console.log(++num): აქ, ჯერ num გაიზრდება 1-ით (20 გახდება 21), შემდეგ დაბეჭდავს ახალ მნიშვნელობას (21).
+
+// console.log(num++): ეს კვლავ დაუბეჭდავს num-ის მიმდინარე მნიშვნელობას (21), მაგრამ შემდეგ გაზრდის მას (22).
+</script>
+  </body>
+  </html>
+
+<!-- 5 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+    let age = prompt("გთხოვთ, მიუთითოთ თქვენი ასაკი:");
+    age = Number(age);
+    age++;
+
+    if (age <= 18) {
+        console.log("You are kid");
+    } else {
+        console.log("You are adult");
+    }
+</script>
+</body>
+</html>

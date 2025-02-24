@@ -1,0 +1,103 @@
+<!-- 1 -->
+<!-- ჩაშენებული ობიექტები JavaScript-ში არის ობიექტები, რომლებიც უკვე მნიშნველოვანი ფუნქციების შესასრულებლად არის წინასწარ განსაზღვრული JavaScript ენაში. მათთან მუშაობა გაუადვილებთ და აუმჯობესებთ კოდირების პროცესს. მაგალითად:
+
+Math: არაჩვეულებრივი სამეცნიერო და სტატისტიკური ფუნქციები. მაგალითად Math.random(), Math.floor() და სხვ.
+Date: კოდის დროისა და თარიღის მანიპულირება. მაგალითად new Date().
+String: ტექსტის ოპერაციები. მაგალითად str.toUpperCase(), str.includes().
+Array: სიების და ჩამონათვალების ოპერაციები. მაგალითად arr.push(), arr.slice().
+Object: ობიექტების მანიპულირება. მაგალითად Object.keys() და Object.assign().
+RegExp: რეგულარული გამოხატულებები. მაგალითად RegExp.test().
+JSON: JSON ფორმატის მონაცემებთან მუშაობა. მაგალითად JSON.parse() და JSON.stringify(). -->
+
+<!-- 2 -->
+ <!-- Stack:არის მეხსიერების თანმიმდევრული ადგილმდებარეობა, რომელიც გამოიყენება ადგილობრივი ცვლადების, ფუნქციების პარამეტრებისა და ფუნქციების დაბრუნების მისამართებისთვის.
+
+ Heap:ეს არის მეხსიერების სხვა ტიპი, სადაც ინახება ობიექტები და არასტრუქტურირებული მონაცემები.
+ -->
+
+
+ <!-- 3 -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+let firstName = prompt("გთხოვთ, მიუთითოთ თქვენი სახელი:");
+let lastName = prompt("გთხოვთ, მიუთითოთ თქვენი გვარი:");
+let age = prompt("გთხოვთ, მიუთითოთ თქვენი ასაკი:");
+
+let user = {
+  name: firstName,
+  surname: lastName,
+  age: age
+};
+
+console.log(user);
+
+user.name = "ნუკი";
+
+console.log(user);
+
+    </script>
+  </body>
+  </html>
+
+  <!-- 4 -->
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   </head>
+   <body>
+    <script>
+        const me = {
+    name: "Nika",
+    age: 20
+};
+
+const you = me;
+you.age = 25;
+console.log(me.age);
+
+    </script>
+   </body>
+   </html>
+
+<!-- me ობიექტი შეიცვალა, რადგან you მითითებულია როგორც იგივე ობიექტი, რაც me. ამით ჩვენ, პრაქტიკულად, შეცვალეთ იმავე ობიექტის თვისებები ორივე ცვლადში. me და you მიუთითებენ ერთსა და იმავე ობიექტს მეხსიერებაში. ამიტომ, როცა შეიცვალა you.age, ეს ცვლილება ასახვა გამოიწვია me-ში. -->
+
+
+<!-- 5 -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        // Math.floor(): რიცხვის ქვედა მთელი რიცხვში გადაყვანა
+        console.log(Math.floor(5.8)); // 5
+
+        // Math.ceil(): რიცხვის ზემოთ მთელი რიცხვში გადაყვანა
+        console.log(Math.ceil(5.1)); // 6
+
+        // Math.round(): რიცხვის მრგვალი სახით გადაყვანა
+        console.log(Math.round(5.4)); // 5
+        console.log(Math.round(5.5)); // 6
+  
+        //Math.trunc(): რიცხვის მთელი ნაწილების გადაყვანა (ამოღებულია ათწილადი)
+        console.log(Math.trunc(5.7)); // 5
+        console.log(Math.trunc(-5.7)); // -5
+
+       // Math.random(): შემთხვევითი რიცხვის გენერირება 0 და 1 შორის
+       console.log(Math.random()); // მაგალითად 0.837
+    </script>
+ </body>
+ </html>

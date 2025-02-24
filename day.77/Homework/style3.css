@@ -18,7 +18,7 @@ body {
     width: 0px;
     height: 20px;
     background-color: rgb(255, 255, 255);
-    animation: loading 4s infinite;
+    animation: loading 100s infinite;
 }
 @keyframes loading {
     0% { width: 0; }

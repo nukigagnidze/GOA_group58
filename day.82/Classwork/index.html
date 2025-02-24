@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>გამოცნობის თამაში</title>
+</head>
+<body>
+  <h1>გამოცნობის თამაში</h1>
+  <p>შეიტანეთ რიცხვი და სცადეთ გამოიცნოთ, თუ ეს რიცხვი სწორია!</p>
+
+  <label for="guess">შეიტანეთ რიცხვი (1-დან 10-ის ჩათვლით):</label>
+  <input type="number" id="guess" min="1" max="10">
+  <button onclick="checkGuess()">Დავიწყოთ თამაში</button>
+
+  <p id="result"></p>
+
+  <script>
+    let attemptCount = 0;
+    const maxAttempts = 3;
+
+    function checkGuess() {
+      const randomNumber = Math.round(Math.random() * 9) + 1;
+
+      const userGuess = parseInt(document.getElementById('guess').value);
+
+      attemptCount++;
+
+      let resultMessage = '';
+      if (userGuess === randomNumber) {
+        resultMessage = 'You win! რიცხვი იყო: ' + randomNumber;
+      } else if (attemptCount >= maxAttempts) {
+        resultMessage = 'You lose! მაქსიმალური ცდა ამოიწურა. რიცხვი იყო: ' + randomNumber;
+      } else {
+        resultMessage = 'ცდა არ შედგა, სცადეთ ისევ! დარჩენილი ცდები: ' + (maxAttempts - attemptCount);
+      }
+
+      document.getElementById('result').innerText = resultMessage;
+    }
+  </script>
+</body>
+</html>

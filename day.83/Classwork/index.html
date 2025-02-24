@@ -1,0 +1,29 @@
+<!-- var არის JavaScript-ის keyword, რომელიც ცვლადებს არაქარხნულად განსაზღვრავს. მას არ აქვს ბლოკ-ლოკალიზაცია, რის გამოც გლობალურად ან ფუნქციის შიგნით ხდება მისი ინახვა. var-ის გამოყენება ნაკლებად უსაფრთხოა და რეკომენდირებული არ არის.
+let: ცვლადი ლოკალიზებულია ბლოკში, ანუ მისი გამოყენება უფრო უსაფრთხოა.
+
+const: გამოიყენება ისეთი ცვლადებისთვის, რომლებიც არ უნდა შეიცვალოს. -->
+ 
+<!-- 2) შექმენით ცვლადი var keyword-ის გამოყენებით, შემდეგ window ჩაშენებული ობიექტიდან წამოიღეთ ის როგორც კყთვნილება და დაბეჭდეთ.window.{ცლვადის სახელი}.შეცვალეთ ის და დაბეჭდეთ ისევ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myVariable = "Initial Value";
+
+        function showVariable() {
+            console.log(window.myVariable);
+            alert("Initial Value: " + window.myVariable);
+
+            window.myVariable = "Updated Value";
+
+            console.log(window.myVariable); 
+            alert("Updated Value: " + window.myVariable);
+        }
+    </script>
+</body>
+</html>
