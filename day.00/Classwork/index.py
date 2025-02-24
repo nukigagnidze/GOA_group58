@@ -1,1 +1,1 @@
-# აქ classworke არ გვქონდა
+# აქ classwork-ი არ გვქონდა
