@@ -1,5 +1,5 @@
 # 4
-word = "ana"
+word = "ნუკი"
 
 reversed_word = ""
                 # (3,2,1,0)
