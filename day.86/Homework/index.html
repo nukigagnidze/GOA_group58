@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or Odd</title>
+</head>
+<body>
+    <h1>Check if a number is Even or Odd</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="checkEvenOrOdd()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkEvenOrOdd() {
+            // მომხმარებლის რიცხვის აღება
+            const number = document.getElementById('numberInput').value;
+            
+            // ლუწობის შემოწმება ტერნალური ოპერატორის გამოყენებით
+            const result = (number % 2 === 0) ? "The number is Even" : "The number is Odd";
+            
+            // შედეგის ჩვენება
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>
