@@ -1,1 +1,1 @@
-# classwork-i ar gvqonda
+# classwork-ი არ გვქონდა
