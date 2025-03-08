@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>მნიშვნელობების ჯამი</title>
+</head>
+<body>
+
+  <button id="sumButton">დააჭირე რომ გამოთვალოს ჯამი</button>
+
+  <script>
+    function calculateSum() {
+      let num1 = prompt("გთხოვთ შეიტანოთ პირველი რიცხვი:");
+      let num2 = prompt("გთხოვთ შეიტანოთ მეორე რიცხვი:");
+
+      let sum = parseFloat(num1) + parseFloat(num2);
+
+      console.log("რიცხვების ჯამია: " + sum);
+    }
+
+    document.getElementById("sumButton").addEventListener("click", calculateSum);
+  </script>
+
+</body>
+</html>
