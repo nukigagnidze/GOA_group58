@@ -1,0 +1,168 @@
+<!-- 1 -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        const evenNumbers = (n) => {
+            let evenArr = [];
+            for (let i = 0; i <= n; i++) {
+                if (i % 2 === 0) {
+                    evenArr.push(i);
+                }
+            }
+            return evenArr;
+};
+
+    </script>
+ </body>
+ </html>
+
+<!-- 2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const sumEvenIndexed = (arr) => {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i += 2) {
+                sum += arr[i];
+            }
+            return sum;
+        };
+    </script>
+</body>
+</html>
+
+<!-- 3 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const longestString = (arr) => {
+            return arr.reduce((longest, current) => {
+                return current.length > longest.length ? current : longest;
+            }, "");
+        };
+
+    </script>
+</body>
+</html>
+
+
+
+<!-- 4 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for (let i = 5; i >= 0; i--) {
+            console.log(i);
+        }
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>წიგნის რეკლამა</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">წიგნი</h1>
+        <div class="book-container">
+            <img src="book-cover.png" alt="Book Cover" class="book-cover">
+        </div>
+        <p class="description">ელონ მასკი - უოლტერ აიზეკსონის ბესტსელერი ბიოგრაფია.</p>
+        <button class="buy-button" onclick="buyBook()">შეძენა</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #1a1a2e, #16213e);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.book-container {
+    display: flex;
+    justify-content: center;
+}
+
+.book-cover {
+    width: 200px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.description {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.buy-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #0056b3;
+}
+
+// script.js
+function buyBook() {
+    alert("წიგნი წარმატებით დაემატა კალათაში!");
+}

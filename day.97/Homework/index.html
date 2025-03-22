@@ -1,0 +1,219 @@
+<!-- 1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sortByAge(arr, callback) {
+    return arr.sort(callback);
+}
+
+const people = [
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 17 },
+    { name: "Charlie", age: 30 }
+];
+
+const sortedPeople = sortByAge(people, (a, b) => a.age - b.age);
+console.log(sortedPeople);
+
+    </script>
+</body>
+</html>
+
+<!-- 2 -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        function applyToEach(arr, callback) {
+    let result = [];
+    for (let item of arr) {
+        result.push(callback(item));
+    }
+    return result;
+}
+
+const numbers = [1, 2, 3, 4];
+const doubled = applyToEach(numbers, num => num * 2);
+console.log(doubled); // [2, 4, 6, 8]
+
+    </script>
+ </body>
+ </html>
+
+ <!-- 3 -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        function filterAdults(arr, callback) {
+    return arr.filter(callback);
+}
+
+const filtered = filterAdults(people, person => person.age >= 18);
+console.log(filtered);
+    </script>
+  </body>
+  </html>
+
+  <!-- 4 -->
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   </head>
+   <body>
+    <script>
+        function sumAges(arr, callback, initialValue) {
+    return arr.reduce(callback, initialValue);
+}
+
+const totalAge = sumAges(people, (sum, person) => sum + person.age, 0);
+console.log(totalAge); // 72
+
+    </script>
+   </body>
+   </html>
+
+<!-- 5 -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        function findOldest(arr, callback) {
+    return arr.reduce(callback);
+}
+
+const oldest = findOldest(people, (old, person) => (person.age > old.age ? person : old));
+console.log(oldest); // { name: "Charlie", age: 30 }
+
+    </script>
+ </body>
+ </html>
+
+ <!-- 6 -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        function logNames(arr, callback) {
+    arr.forEach(callback);
+}
+
+logNames(people, person => console.log(person.name));
+
+    </script>
+  </body>
+  </html>
+
+  <!-- 7 -->
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   </head>
+   <body>
+    <script>
+        function formatPeople(arr, callback) {
+    return arr.map(callback);
+}
+
+const descriptions = formatPeople(people, person => `${person.name} is ${person.age} years old.`);
+console.log(descriptions);
+
+    </script>
+   </body>
+   </html>
+
+
+   <!-- 8 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findYoungest(arr, callback) {
+    return arr.reduce(callback);
+}
+
+const youngest = findYoungest(people, (youngest, person) => (person.age < youngest.age ? person : youngest));
+console.log(youngest);
+
+    </script>
+</body>
+</html>
+
+<!-- 9 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function areAllAdults(arr, callback) {
+    return arr.every(callback);
+}
+
+const allAdults = areAllAdults(people, person => person.age >= 18);
+console.log(allAdults); // false
+
+    </script>
+</body>
+</html>
+
+<!-- 10 -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        function findMinor(arr, callback) {
+    return arr.find(callback);
+}
+
+const firstMinor = findMinor(people, person => person.age < 18);
+console.log(firstMinor); // { name: "Bob", age: 17 }
+
+    </script>
+ </body>
+ </html>
