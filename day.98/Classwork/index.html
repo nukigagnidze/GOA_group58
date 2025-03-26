@@ -1,0 +1,54 @@
+<!-- 1 -->
+ <!-- მაღალი რიგის ფუნქცია არის ფუნქცია, რომელიც:იღებს სხვა ფუნქციას არგუმენტადან აბრუნებს ფუნქციას -->
+
+ <!-- Callback არის ფუნქცია, რომელსაც ვაძლევთ სხვა ფუნქციას, რათა მოგვიანებით იქიდან გამოიძახოს. -->
+
+ <!-- 2 -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+    function higherOrderFunction(callback) {
+        console.log("ვიძახებ გადაცემულ ფუნქციას...");
+        callback(); 
+    }
+    function myCallback() {
+        console.log("მე ვარ გადაცემული ფუნქცია და ამოვიძახე!");
+    }
+    higherOrderFunction(myCallback);
+
+    </script>
+  </body>
+  </html>
+
+  <!-- 3 -->
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   </head>
+   <body>
+    <script>
+    function manualForEach(array, callback) {
+        for (let i = 0; i < array.length; i++) {
+            callback(array[i], i, array);
+        }
+    }
+    
+    function printElement(element, index) {
+        console.log(`Index: ${index}, Value: ${element}`);
+    }
+
+    const numbers = [10, 20, 30, 40];
+    manualForEach(numbers, printElement);
+
+    </script>
+   </body>
+   </html>
