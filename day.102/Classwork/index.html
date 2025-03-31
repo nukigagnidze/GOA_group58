@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 1) DOM არის დოკუმენტის სტრუქტურა, რომელიც ბრაუზერს HTML დოკუმენტის წაკითხვასა და მანიპულაციაში ეხმარება.ეს არის ხისებრი სტრუქტურა, სადაც თითოეული HTML ელემენტი წარმოადგენს ობიექტს .-->
+
+    <div class="my-class">element 1</div>
+    <div class="my-class">element 2</div>
+    <div class="my-class">element 3</div>
+    <div class="my-class">element 4</div>
+    <div class="my-class">element 5</div>
+
+    <p>trre</p>
+    <p>gdzgd</p>
+    <p>gfd</p>
+    <p>hdf</p>
+    <p>grfs</p>
+
+    <script>
+        let elements = document.getElementsByClassName("my-class");
+
+        for (let i = 0; i < elements.length; i++) {
+            console.log(elements[i]);
+        }
+
+        let paragraphs = document.getElementsByTagName("p");
+
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].innerText = `new text for paragrap ${i + 1}`;
+        }
+    </script>
+
+</body>
+</html>
