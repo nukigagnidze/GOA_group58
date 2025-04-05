@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .new-class {
+      color: blue;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <p id="oldId">ეს არის პირველი პარაგრაფი.</p>
+  <p class="old-class">ეს არის მეორე პარაგრაფი.</p>
+  <p>ეს არის მესამე პარაგრაფი.</p>
+
+  <div id="myId">ეს არის ID-ით არჩეული ელემენტი</div>
+  <div class="myClass">ეს არის კლასით არჩეული ელემენტი</div>
+  <p>ეს არის თეგით არჩეული ელემენტი</p>
+
+  <script>
+    const firstParagraph = document.querySelector("#oldId");
+    firstParagraph.textContent = "შეცვლილი ტექსტი პირველი პარაგრაფისთვის.";
+    firstParagraph.setAttribute("id", "newId");
+
+    const secondParagraph = document.querySelector(".old-class");
+    secondParagraph.className = "new-class";
+    secondParagraph.style.backgroundColor = "lightgray";
+
+    const thirdParagraph = document.querySelectorAll("p")[2]; 
+    const boldElement = document.createElement("b");
+    boldElement.textContent = " ეს არის გამუქებული ტექსტი.";
+    thirdParagraph.appendChild(boldElement);
+
+    const byId = document.querySelector("#myId");
+    const byClass = document.querySelector(".myClass");
+    const byTag = document.querySelector("p");
+
+    console.log("ID:", byId.textContent);
+    console.log("Class:", byClass.textContent);
+    console.log("Tag:", byTag.textContent);
+
+    function queryWord(selector) {
+      return document.querySelector(selector);
+    }
+
+    const qId = queryWord("#myId");
+    const qClass = queryWord(".myClass");
+    const qTag = queryWord("p");
+
+    console.log("queryWord ID:", qId.textContent);
+    console.log("queryWord Class:", qClass.textContent);
+    console.log("queryWord Tag:", qTag.textContent);
+  </script>
+
+</body>
+</html>

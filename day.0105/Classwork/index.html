@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .new-class {
+      color: blue;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <p id="oldId">ეს არის პირველი პარაგრაფი.</p>
+  <p class="old-class">ეს არის მეორე პარაგრაფი.</p>
+  <p>ეს არის მესამე პარაგრაფი.</p>
+
+  <script>
+    const firstParagraph = document.getElementById("oldId");
+    firstParagraph.textContent = "შეცვლილი ტექსტი პირველი პარაგრაფისთვის.";
+    firstParagraph.id = "newId";
+
+    const secondParagraph = document.querySelector(".old-class");
+    secondParagraph.className = "new-class";
+    secondParagraph.style.backgroundColor = "lightgray";
+
+    const thirdParagraph = document.getElementsByTagName("p")[2];
+    const boldText = document.createElement("b");
+    boldText.textContent = " ეს არის გამუქებული ტექსტი.";
+    thirdParagraph.appendChild(boldText);
+  </script>
+
+</body>
+</html>
+
+
+
+
+
