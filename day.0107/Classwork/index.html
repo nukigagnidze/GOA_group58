@@ -1,0 +1,90 @@
+<!-- 1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Editor</title>
+</head>
+<body>
+
+  <button onclick="updateProduct()">Update Product</button>
+
+  <div id="productList"></div>
+
+  <script>
+    let products = [
+      { id: 1, name: "Laptop", quantity: 5, price: 1000 },
+      { id: 2, name: "Phone", quantity: 10, price: 500 },
+      { id: 3, name: "Tablet", quantity: 3, price: 700 }
+    ];
+
+    function updateProduct() {
+      const id = parseInt(prompt("შეიყვანე პროდუქტის ID რომელიც გსურს განაახლო:"));
+      const name = prompt("შეიყვანე ახალი სახელი:");
+      const quantity = parseInt(prompt("შეიყვანე ახალი რაოდენობა:"));
+      const price = parseFloat(prompt("შეიყვანე ახალი ფასი:"));
+
+      const product = products.find(p => p.id === id);
+
+      if (product) {
+        product.name = name;
+        product.quantity = quantity;
+        product.price = price;
+        render(products);
+      } else {
+        alert("პროდუქტი მითითებული ID-ით ვერ მოიძებნა.");
+      }
+    }
+
+    function render(products) {
+      const container = document.getElementById("productList");
+      container.innerHTML = ""; 
+      products.forEach(p => {
+        const div = document.createElement("div");
+        div.textContent = `ID: ${p.id}, სახელი: ${p.name}, რაოდენობა: ${p.quantity}, ფასი: ${p.price}`;
+        container.appendChild(div);
+      });
+    }
+
+    render(products);
+  </script>
+
+</body>
+</html>
+
+
+
+<!-- 2 -->
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>ტაიმერი</title>
+</head>
+<body>
+  <h1>ტაიმერი</h1>
+  <div id="timer">0 წამი</div>
+
+  <script>
+    let input = prompt("შეიყვანე დრო წამებში (მაქსიმუმ 60):");
+
+    if (input.trim() === "" || Number(input) <= 0 || Number(input) > 60) {
+      alert("გთხოვ შეიყვანე სწორი დრო 1-დან 60-მდე.");
+    } else {
+      let startTime = Date.now();
+      let display = document.getElementById("timer");
+
+      let timer = setInterval(() => {
+        let secondsPassed = Math.floor((Date.now() - startTime) / 1000);
+        display.textContent = `${secondsPassed} წამი`;
+
+        if (secondsPassed >= Number(input)) {
+          clearInterval(timer);
+          alert("ტაიმერი დასრულდა!");
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
+

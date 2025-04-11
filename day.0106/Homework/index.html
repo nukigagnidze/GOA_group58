@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Manager</title>
+</head>
+<body>
+
+  <button onclick="addProduct()">Add Product</button>
+  <button onclick="deleteProduct()">Delete Product by ID</button>
+
+  <table border="1" style="margin-top:20px;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>სახელი</th>
+        <th>რაოდენობა</th>
+        <th>ფასი</th>
+      </tr>
+    </thead>
+    <tbody id="productTable">
+    </tbody>
+  </table>
+
+  <script>
+    let products = [];
+    let currentId = 1;
+
+    function addProduct() {
+      const name = prompt("შეიყვანე პროდუქტის სახელი:");
+      const quantity = parseInt(prompt("შეიყვანე რაოდენობა:"));
+      const price = parseFloat(prompt("შეიყვანე ფასი:"));
+
+      if (!name || isNaN(quantity) || isNaN(price)) {
+        alert("გთხოვ შეიყვანო სწორი მონაცემები.");
+        return;
+      }
+
+      const newProduct = {
+        id: currentId++,
+        name,
+        quantity,
+        price
+      };
+
+      products.push(newProduct);
+      render(products);
+    }
+
+    function deleteProduct() {
+      const idToDelete = parseInt(prompt("შეიყვანე პროდუქტის ID წასაშლელად:"));
+
+      const index = products.findIndex(p => p.id === idToDelete);
+
+      if (index === -1) {
+        alert("პროდუქტი ამ ID-ით ვერ მოიძებნა!");
+        return;
+      }
+
+      products.splice(index, 1); 
+      render(products); 
+    }
+
+    function render(products) {
+      const tableBody = documet.getElementById("productTable");
+      tableBody.innerHTML = ""; 
+
+      products.forEach(p => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${p.id}</td>
+          <td>${p.name}</td>
+          <td>${p.quantity}</td>
+          <td>${p.price}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+  </script>
+
+</body>
+</html>

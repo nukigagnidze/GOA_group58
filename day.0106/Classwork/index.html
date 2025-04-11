@@ -1,0 +1,85 @@
+<!-- 1 -->
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <button id="myButton">click me</button>
+
+  <script>
+    let count = 0;
+
+    document.getElementById("myButton").addEventListener("click", counter);
+
+    function counter() {
+      count++;
+      alert("click numbers: " + count);
+    }
+  </script>
+
+</body>
+</html>
+
+
+<!-- 2 -->
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <button onclick="addProduct()">პროდუქტის დამატება</button>
+
+  <table id="productTable">
+    <thead>
+      <tr>
+        <th>სახელი</th>
+        <th>რაოდენობა</th>
+        <th>ერთეულის ფასი</th>
+        <th>სრული ფასი</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <p id="totalPrice">Total Price: 0</p>
+
+  <script>
+    let total = 0;
+
+    function addProduct() {
+      let name = prompt("შეიყვანე პროდუქტის სახელი:");
+      let quantity = parseInt(prompt("შეიყვანე რაოდენობა:"), 10);
+      let unitPrice = parseFloat(prompt("შეიყვანე ერთეულის ფასი:"));
+
+      if (!name || isNaN(quantity) || isNaN(unitPrice)) {
+        alert("გთხოვ სწორად შეიყვანო ყველა ველი!");
+        return;
+      }
+
+      let fullPrice = quantity * unitPrice;
+
+      let tableBody = document.getElementById("productTable").getElementsByTagName("tbody")[0];
+      let newRow = tableBody.insertRow();
+
+      newRow.insertCell(0).textContent = name;
+      newRow.insertCell(1).textContent = quantity;
+      newRow.insertCell(2).textContent = unitPrice.toFixed(2);
+      newRow.insertCell(3).textContent = fullPrice.toFixed(2);
+
+      total += fullPrice;
+      document.getElementById("totalPrice").textContent = "Total Price: " + total.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- 3 -->
+ 
