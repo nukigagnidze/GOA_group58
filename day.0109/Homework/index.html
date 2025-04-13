@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Slider</title>
+  <style>
+    body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #f3f3f3; }
+    .slider { position: relative; width: 400px; height: 250px; overflow: hidden; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+    .slides { display: flex; transition: transform 0.5s ease-in-out; }
+    .slides img { width: 400px; height: 250px; object-fit: cover; }
+    .buttons { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); }
+    .buttons button { background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; font-size: 18px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <div class="slides" id="slides">
+      <img src="https://via.placeholder.com/400x250?text=1" />
+      <img src="https://via.placeholder.com/400x250?text=2" />
+      <img src="https://via.placeholder.com/400x250?text=3" />
+    </div>
+    <div class="buttons">
+      <button onclick="prev()">←</button>
+      <button onclick="next()">→</button>
+    </div>
+  </div>
+
+  <script>
+    let index = 0;
+    const slides = document.getElementById('slides');
+    const totalSlides = slides.children.length;
+
+    function showSlide(i) {
+      index = (i + totalSlides) % totalSlides;
+      slides.style.transform = `translateX(-${index * 400}px)`;
+    }
+
+    function next() { showSlide(index + 1); }
+    function prev() { showSlide(index - 1); }
+  </script>
+</body>
+</html>

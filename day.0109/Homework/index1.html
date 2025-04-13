@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ჯეირანი კომპიუტერთან</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 40px; background: #e2f0f8; }
+    button { padding: 10px 20px; margin: 10px; font-size: 18px; cursor: pointer; border-radius: 8px; border: none; background: #007bff; color: white; }
+    #result { font-size: 22px; margin-top: 20px; }
+    .scoreboard { margin-top: 30px; font-size: 20px; }
+  </style>
+</head>
+<body>
+  <h1>ჯეირანი კომპიუტერთან</h1>
+
+  <div>
+    <button onclick="play('rock')">✊ ქვა</button>
+    <button onclick="play('paper')">✋ ქაღალდი</button>
+    <button onclick="play('scissors')">✌️ მაკრატელი</button>
+  </div>
+
+  <div id="result"></div>
+
+  <div class="scoreboard">
+    <p>🔵 შენი ქულა: <span id="user-score">0</span></p>
+    <p>🟢 კომპიუტერის ქულა: <span id="comp-score">0</span></p>
+  </div>
+
+  <script>
+    let userScore = 0;
+    let compScore = 0;
+
+    function play(userChoice) {
+      const choices = ['rock', 'paper', 'scissors'];
+      const compChoice = choices[Math.floor(Math.random() * 3)];
+
+      let resultText = `შენ აირჩიე ${emoji(userChoice)}, კომპიუტერმა - ${emoji(compChoice)}. `;
+
+      if (userChoice === compChoice) {
+        resultText += "ფრეა 🤝";
+      } else if (
+        (userChoice === 'rock' && compChoice === 'scissors') ||
+        (userChoice === 'scissors' && compChoice === 'paper') ||
+        (userChoice === 'paper' && compChoice === 'rock')
+      ) {
+        userScore++;
+        resultText += "შენ მოიგე! 🎉";
+      } else {
+        compScore++;
+        resultText += "კომპიუტერმა მოიგო! 😬";
+      }
+
+      document.getElementById('result').innerText = resultText;
+      document.getElementById('user-score').innerText = userScore;
+      document.getElementById('comp-score').innerText = compScore;
+    }
+
+    function emoji(choice) {
+      if (choice === 'rock') return '✊';
+      if (choice === 'paper') return '✋';
+      return '✌️';
+    }
+  </script>
+</body>
+</html>

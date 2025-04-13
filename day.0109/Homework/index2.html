@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rating Component</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #121417;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      background: #252d37;
+      padding: 30px;
+      border-radius: 20px;
+      width: 300px;
+      color: white;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #cfcfcf;
+      margin-bottom: 20px;
+    }
+
+    .ratings {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .ratings button {
+      background: #2e3640;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .ratings button:hover,
+    .ratings button.active {
+      background: #fb7413;
+      color: white;
+    }
+
+    .submit-btn {
+      background: #fb7413;
+      border: none;
+      padding: 10px 20px;
+      width: 100%;
+      border-radius: 20px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #ff8a3d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>How did we do?</h2>
+    <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+    <div class="ratings" id="rating-buttons">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+    </div>
+    <button class="submit-btn" onclick="submitRating()">SUBMIT</button>
+  </div>
+
+  <script>
+    let selectedRating = null;
+    const buttons = document.querySelectorAll("#rating-buttons button");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        buttons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        selectedRating = button.textContent;
+      });
+    });
+
+    function submitRating() {
+      if (selectedRating) {
+        alert("გმადლობთ შეფასებისთვის! შეაფასეთ: " + selectedRating);
+      } else {
+        alert("გთხოვთ, აირჩიეთ შეფასება!");
+      }
+    }
+  </script>
+
+</body>
+</html>
