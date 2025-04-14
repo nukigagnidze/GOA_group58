@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Projects</title>
+</head>
+<body>
+
+    <h1>Mini Projects</h1>
+
+    <!-- 2) ორი რიცხვის ჯამის ღილაკი -->
+    <button onclick="sumNumbers()">გამოთვალე ჯამი</button>
+    <p id="sumResult"></p>
+
+    <!-- 3) საყვარელი ფილმები -->
+    <button onclick="getFavoriteMovies()">ჩემი საყვარელი ფილმები</button>
+    <ul id="movieList"></ul>
+
+    <!-- Boss Level: To Do List -->
+    <h2>To Do List</h2>
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        // 2) ორი რიცხვის ჯამი
+        function sumNumbers() {
+            const num1 = parseFloat(prompt("შეიყვანე პირველი რიცხვი:"));
+            const num2 = parseFloat(prompt("შეიყვანე მეორე რიცხვი:"));
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("გთხოვ შეიყვანე მხოლოდ რიცხვები!");
+                return;
+            }
+
+            const sum = num1 + num2;
+            document.getElementById("sumResult").textContent = `${num1} + ${num2} = ${sum}`;
+        }
+
+        // 3) საყვარელი ფილმები
+        function getFavoriteMovies() {
+            const movies = [];
+
+            for (let i = 1; i <= 5; i++) {
+                const movie = prompt(`შეიყვანე შენი №${i} საყვარელი ფილმი:`);
+                if (movie) {
+                    movies.push(movie);
+                }
+            }
+
+            const movieList = document.getElementById("movieList");
+            movieList.innerHTML = "";
+
+            movies.forEach(movie => {
+                const li = document.createElement("li");
+                li.textContent = movie;
+                movieList.appendChild(li);
+            });
+        }
+
+        // Boss Level: To Do List
+        function addTask() {
+            const taskText = prompt("შეიყვანე ახალი Task:");
+
+            if (!taskText) return;
+
+            const li = document.createElement("li");
+            li.textContent = taskText + " ";
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+            deleteBtn.onclick = function () {
+                li.remove();
+            };
+
+            li.appendChild(deleteBtn);
+            document.getElementById("taskList").appendChild(li);
+        }
+    </script>
+
+</body>
+</html>
