@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Input to List</title>
+</head>
+<body>
+
+  <h2>ჩაწერე ტექსტი და დაამატე სიაში</h2>
+
+  <form id="myForm">
+    <input type="text" id="myInput" placeholder="შეიყვანე ტექსტი" />
+    <button type="submit">დამატება</button>
+  </form>
+
+  <ul id="myList"></ul>
+
+  <script>
+    const form = document.getElementById("myForm");
+    const input = document.getElementById("myInput");
+    const list = document.getElementById("myList");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      const value = input.value.trim();
+      if (value !== "") {
+        const li = document.createElement("li");
+        li.textContent = value;
+        list.appendChild(li);
+        input.value = "";
+      }
+    });
+  </script>
+
+</body>
+</html>

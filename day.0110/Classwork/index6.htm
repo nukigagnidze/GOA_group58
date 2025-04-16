@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>დავალება 5</title>
+  <style>
+    #counter {
+      font-size: 48px;
+      font-weight: bold;
+      margin: 20px;
+      padding: 20px;
+      width: 100px;
+      text-align: center;
+      border: 2px solid black;
+    }
+
+    .even {
+      background-color: lightblue;
+    }
+
+    .odd {
+      background-color: lightpink;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="counter">0</div>
+
+  <script>
+    let num = 0;
+    const counter = document.getElementById("counter");
+
+    setInterval(() => {
+      counter.textContent = num;
+      if (num % 2 === 0) {
+        counter.className = "even";
+      } else {
+        counter.className = "odd";
+      }
+      num = (num + 1) % 10;
+    }, 3000);
+  </script>
+
+</body>
+</html>

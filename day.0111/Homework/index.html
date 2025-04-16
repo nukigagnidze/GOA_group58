@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple To-Do List</title>
+</head>
+<body>
+
+  <h2>My To-Do List</h2>
+
+  <input type="text" id="myInput" placeholder="Write a task">
+  <button onclick="addTask()">Add</button>
+
+  <ul id="taskList"></ul>
+
+  <script>
+    function addTask() {
+      const input = document.getElementById("myInput");
+      const taskText = input.value.trim();
+
+      if (taskText === "") {
+        alert("Please write a task.");
+        return;
+      }
+
+      const li = document.createElement("li");
+      li.textContent = taskText;
+
+      // Click to mark as done
+      li.onclick = function() {
+        if (li.style.textDecoration === "line-through") {
+          li.style.textDecoration = "none";
+        } else {
+          li.style.textDecoration = "line-through";
+        }
+      };
+
+      li.ondblclick = function() {
+        li.remove();
+      };
+
+      document.getElementById("taskList").appendChild(li);
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>
