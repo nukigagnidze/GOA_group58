@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>რეგისტრაციის ფორმა</title>
+</head>
+<body>
+  <h2>რეგისტრაცია</h2>
+  <form id="registrationForm">
+    <label>Username:
+      <input type="text" id="username" />
+    </label><br><br>
+
+    <label>Email:
+      <input type="email" id="email" />
+    </label><br><br>
+
+    <label>Password:
+      <input type="password" id="password" />
+    </label><br><br>
+
+    <button type="submit">რეგისტრაცია</button>
+  </form>
+
+  <pre id="userList"></pre>
+
+  <script>
+    const users = [];
+
+    document.getElementById("registrationForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      if (!username || !email || !password) {
+        alert("გთხოვთ შეავსოთ ყველა ველი.");
+        return;
+      }
+
+      if (!email.includes("@") || !email.includes(".")) {
+        alert("გთხოვთ შეიყვანოთ სწორი იმეილი.");
+        return;
+      }
+
+      if (password.length < 6) {
+        alert("პაროლი უნდა შეიცავდეს მინიმუმ 6 სიმბოლოს.");
+        return;
+      }
+
+      const user = { username, email, password };
+      users.push(user);
+
+      document.getElementById("userList").textContent = JSON.stringify(users, null, 2);
+
+      document.getElementById("registrationForm").reset();
+    });
+  </script>
+</body>
+</html>
+
+
+<!--.at მეთოდი აბრუნებს ელემენტს კონკრეტული ინდექსით. ჩვეულებრივი ინდექსის მსგავსად მუშაობს (მაგ: array[2]), მაგრამ .at() უპირატესობა ის არის, რომ შეგიძლია უარყოფითი ინდექსიც გამოიყენო,
+რაც ნიშნავს "ბოლოდან დაწყებას": მაგალითად .at(-1) აბრუნებს ბოლო ელემენტს, .at(-2) — ბოლოსწინა და ა.შ.-->
