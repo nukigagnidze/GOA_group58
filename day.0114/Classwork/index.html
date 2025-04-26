@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1
+        function copyObj(target, source) {
+            for (let key in source) {
+                if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                }
+            }
+            return target;
+        }
+        
+        let obj1 = { a: 1, b: 2 };
+        let obj2 = { b: 3, c: 4 };
+
+        let result = copyObj(obj1, obj2);
+        console.log(result); 
+
+         // 2
+         let { a, b, c } = result;
+         console.log(a);
+         console.log(b); 
+         console.log(c);
+
+         // 3
+         let obj3 = { x: 10, y: 20 };
+         let obj4 = { y: 30, z: 40 };
+
+         let merged = Object.assign({}, obj3, obj4);
+         console.log(merged); 
+
+         // 4
+         // 1. მასივის დესტრუქტურიზაცია
+        const fruits = ["apple", "banana", "cherry"];
+
+// მასივიდან ელემენტების ამოღება ინდექსის მიხედვით
+        const [firstFruit, secondFruit, thirdFruit] = fruits;
+        
+        console.log("Massive destructuring:");
+        console.log(firstFruit);   // "apple" — fruits[0]
+        console.log(secondFruit);  // "banana" — fruits[1]
+        console.log(thirdFruit);   // "cherry" — fruits[2]
+
+
+// 2. ობიექტის დესტრუქტურიზაცია
+        const car = {
+            brand: "Toyota",
+            model: "Corolla",
+            year: 2020
+        };
+
+// ობიექტიდან ამოღება ველის სახელის მიხედვით
+        const { brand, model } = car;
+
+        console.log("\nObject destructuring:");
+        console.log(brand); // "Toyota"
+        // console.log(model); // "Corolla"
+
+
+// 3. სახელის შეცვლა დესტრუქტურიზაციისას
+        const user = {
+            username: "nino99",
+            email: "nino@example.com"
+        };
+
+// დესტრუქტურიზაციისას ცვლადებს ახალი სახელები ვარქვით
+        const { username: userNameVar, email: userEmailVar } = user;
+
+        console.log("\nDestructuring with renaming:");
+        console.log(userNameVar);   
+        console.log(userEmailVar); 
+
+
+// 4. ქარხნული მნიშვნელობები (default values)
+        const profile = {
+            name: "Ana"
+  // age არ არსებობს, ამიტომ ქარხნულ მნიშვნელობას ვიყენებთ
+        };
+
+        const { name, age = 18 } = profile;
+
+        console.log("\nDestructuring with default values:");
+        console.log(name); // "Ana"
+        console.log(age);  // 18 — რადგან profile.age არ არსებობს
+    </script>
+</body>
+</html>
