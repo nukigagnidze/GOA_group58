@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // მშობელი კლასი
+class Person {
+  constructor(name, surname) {
+    this.name = name;
+    this.surname = surname;
+  }
+
+  // მეთოდი: ფიქრის სიმულაცია
+  think() {
+    console.log(`${this.name} is Thinking`);
+  }
+}
+
+// მემკვიდრე კლასი
+class Student extends Person {
+  constructor(name, surname, gradeLevel) {
+    super(name, surname); // მშობლის კონსტრუქტორის გამოძახება
+    this.gradeLevel = gradeLevel; // დამატებითი კუთვნილება
+  }
+
+  // სწავლა მითითებულ საგანში
+  study(subject) {
+    console.log(`${this.name} is studying ${subject} and their grade is ${this.gradeLevel}`);
+  }
+}
+
+// ობიექტის შექმნა
+const student1 = new Student("Nika", "Giorgadze", 95);
+
+// მეთოდების გამოძახება
+student1.think(); // "Nika is Thinking"
+student1.study("Math"); // "Nika is studying Math and their grade is 95"
+
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // მშობელი კლასი
+class Person {
+  constructor(name, surname) {
+    this.name = name;
+    this.surname = surname;
+  }
+
+  // მეთოდი: ფიქრის სიმულაცია
+  think() {
+    console.log(`${this.name} is Thinking`);
+  }
+}
+
+// მემკვიდრე კლასი
+class Student extends Person {
+  constructor(name, surname, gradeLevel) {
+    super(name, surname); // მშობლის კონსტრუქტორის გამოძახება
+    this.gradeLevel = gradeLevel; // დამატებითი კუთვნილება
+  }
+
+  // სწავლა მითითებულ საგანში
+  study(subject) {
+    console.log(`${this.name} is studying ${subject} and their grade is ${this.gradeLevel}`);
+  }
+}
+
+// ობიექტის შექმნა
+const student2 = new Student("Nika", "Giorgadze", 95);
+
+// მეთოდების გამოძახება
+student1.think(); // "Nika is Thinking"
+student1.study("Math"); // "Nika is studying Math and their grade is 95"
+
+    </script>
+</body>
+</html>

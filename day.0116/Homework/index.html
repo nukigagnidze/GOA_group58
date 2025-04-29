@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+</head>
+<body>
+
+  <h2>რეგისტრაციის ფორმა</h2>
+  <form id="registrationForm">
+    <input type="text" id="name" placeholder="Name" required><br><br>
+    <input type="email" id="email" placeholder="Email" required><br><br>
+    <input type="password" id="password" placeholder="Password" required><br><br>
+    <button type="submit">Register</button>
+  </form>
+
+  <script>
+    // მომხმარებლების მასივი
+    const users = [];
+
+    // კლასის აღწერა
+    class User {
+      constructor(name, email, password) {
+        this._name = name;
+        this._email = email;
+        this._password = password;
+      }
+
+      // გეთერი სახელისთვის
+      get name() {
+        return this._name;
+      }
+
+      // სეთერი პაროლისთვის ვალიდაციით
+      set password(newPass) {
+        const hasNumber = /\d/.test(newPass);
+        const hasPunctuation = /[.,!?;:'"@#$%^&*()_+={}\[\]|\\<>/~`]/.test(newPass);
+        if (newPass.length > 4 && (hasNumber || hasPunctuation)) {
+          this._password = newPass;
+        } else {
+          console.warn("პაროლი არ აკმაყოფილებს მოთხოვნებს. განახლება ვერ მოხერხდა.");
+        }
+      }
+
+      // დამატებითი გეთერები თუ გინდათ
+      get email() {
+        return this._email;
+      }
+
+      get password() {
+        return this._password;
+      }
+    }
+
+    // ფორმის გაგზავნის დამუშავება
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // არ გადაატვირთოს გვერდი
+
+      // ინფუთებიდან მონაცემების წამოღება
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      // მინიმალური ვალიდაცია
+      if (!name || !email || !password) {
+        alert("გთხოვთ შეავსოთ ყველა ველი!");
+        return;
+      }
+
+      // მომხმარებლის ობიექტის შექმნა
+      const newUser = new User(name, email, password);
+
+      // მომხმარებლის დამატება მასივში
+      users.push(newUser);
+
+      // კონსოლში დაბეჭდვა
+      console.log("დარეგისტრირებული მომხმარებლები:");
+      console.log(users);
+
+      // ფორმის გასუფთავება
+      document.getElementById("registrationForm").reset();
+    });
+  </script>
+
+</body>
+</html>
+
+
+<!-- constructor იღებს name, email და password მნიშვნელობებს.
+
+get name() აბრუნებს მომხმარებლის სახელს.
+
+set password(newPass) ამოწმებს: -->
