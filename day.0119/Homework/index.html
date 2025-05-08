@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Website</title>
+</head>
+<body>
+  <h2>Cart</h2>
+  <div id="cart" style="background-color: lightgray; padding: 10px;"></div>
+
+  <main></main>
+
+  <script>
+    const main = document.querySelector('main');
+    const cart = document.getElementById('cart');
+    const products = [];
+
+    fetch('https://fakestoreapi.com/products/')
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(product => {
+          const productDiv = document.createElement('div');
+          const title = document.createElement('h3');
+          const img = document.createElement('img');
+          const desc = document.createElement('p');
+          const price = document.createElement('p');
+          const button = document.createElement('button');
+
+          title.textContent = product.title;
+          img.src = product.image;
+          img.width = 100;
+          desc.textContent = product.description;
+          price.textContent = `Price: $${product.price}`;
+          button.textContent = "Add to Cart";
+
+          button.addEventListener('click', () => {
+            products.push(product);
+
+            const cartItem = document.createElement('div');
+            const cartTitle = document.createElement('h4');
+            const cartImg = document.createElement('img');
+            const cartDesc = document.createElement('p');
+            const cartPrice = document.createElement('p');
+
+            cartTitle.textContent = product.title;
+            cartImg.src = product.image;
+            cartImg.width = 50;
+            cartDesc.textContent = product.description;
+            cartPrice.textContent = `Price: $${product.price}`;
+
+            cartItem.appendChild(cartTitle);
+            cartItem.appendChild(cartImg);
+            cartItem.appendChild(cartDesc);
+            cartItem.appendChild(cartPrice);
+
+            cart.appendChild(cartItem);
+          });
+
+          productDiv.appendChild(title);
+          productDiv.appendChild(img);
+          productDiv.appendChild(desc);
+          productDiv.appendChild(price);
+          productDiv.appendChild(button);
+          main.appendChild(productDiv);
+        });
+      });
+  </script>
+</body>
+</html>

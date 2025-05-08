@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products by Category</title>
+</head>
+<body>
+
+  <h2>Choose a Category:</h2>
+  <select id="categorySelect">
+    <option value="all">All</option>
+  </select>
+
+  <main></main>
+
+  <script>
+    const main = document.querySelector("main");
+    const categorySelect = document.getElementById("categorySelect");
+    const categories = ["electronics", "jewelery", "men's clothing", "women's clothing"];
+
+    // 1. Fetch პროდუქტები
+    fetch("https://fakestoreapi.com/products/")
+      .then(res => res.json())
+      .then(products => {
+        console.log("ყველა პროდუქტი:", products); 
+
+        renderf(products); 
+
+        categories.forEach(cat => {
+          const option = document.createElement("option");
+          option.value = cat;
+          option.textContent = cat;
+          categorySelect.appendChild(option);
+        });
+
+        categorySelect.addEventListener("change", () => {
+          const selected = categorySelect.value;
+          if (selected === "all") {
+            renderf(products);
+          } else {
+            const filtered = products.filter(p => p.category === selected);
+            renderf(filtered);
+          }
+        });
+      });
+
+    // 2. პროდუქტის გამოსატანი ფუნქცია
+    function renderf(productsArray) {
+      main.innerHTML = ""; // გასუფთავება
+      productsArray.forEach(product => {
+        const section = document.createElement("section");
+
+        const title = document.createElement("h3");
+        const img = document.createElement("img");
+        const desc = document.createElement("p");
+        const price = document.createElement("p");
+
+        title.textContent = product.title;
+        img.src = product.image;
+        img.width = 100;
+        desc.textContent = product.description;
+        price.textContent = `Price: $${product.price}`;
+
+        section.appendChild(title);
+        section.appendChild(img);
+        section.appendChild(desc);
+        section.appendChild(price);
+
+        main.appendChild(section);
+      });
+    }
+  </script>
+
+</body>
+</html>

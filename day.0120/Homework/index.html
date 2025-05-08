@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1
+        const products = [];
+
+function addProductToTheCart(product) {
+    products.push(product);
+    console.log(products);
+}
+
+module.exports = {
+    addProductToTheCart
+};
+
+// 2
+const add = (a, b) => a + b;
+const subtract = (a, b) => a - b;
+const multiply = (a, b) => a * b;
+const divide = (a, b) => b !== 0 ? a / b : 'Cannot divide by zero';
+
+module.exports = {
+    add,
+    subtract,
+    multiply,
+    divide
+};
+
+
+// 3
+function roundTheNumber(number) {
+    const rounded = Math.round(number);
+    console.log(rounded);
+}
+
+module.exports = roundTheNumber;
+
+
+// 4
+function greetUser(name) {
+    console.log(`მოგესალმები, ${name}!`);
+}
+
+module.exports = greetUser;
+
+
+// 5
+const { addProductToTheCart } = require('./cart');
+const math = require('./math');
+const roundTheNumber = require('./roundTheNumber');
+const greetUser = require('./greetUser');
+
+addProductToTheCart({ name: "ლეპტოპი", price: 1200 });
+greetUser("გიორგი");
+roundTheNumber(4.7);
+console.log("მიმატება:", math.add(10, 5));
+console.log("გამოკლება:", math.subtract(10, 5));
+console.log("გამრავლება:", math.multiply(10, 5));
+console.log("გაყოფა:", math.divide(10, 5));
+
+    </script>
+</body>
+</html>

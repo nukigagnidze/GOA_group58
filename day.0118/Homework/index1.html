@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const shoppingCart = new Promise((resolve, reject) => {
+  const cartItems = ["milk", "bread", "eggs"];
+  const requestedItem = "bread"; 
+
+  if (cartItems.includes(requestedItem)) {
+    resolve(`${requestedItem} is available at the moment`);
+  } else {
+    reject(`sorry we don't have the ${requestedItem}`);
+  }
+});
+
+shoppingCart
+  .then(message => {
+    console.log(message); 
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+    </script>
+</body>
+</html>
