@@ -1,0 +1,12 @@
+{
+  "name": "user-registration-app",
+  "version": "1.0.0",
+  "description": "Simple user registration project with localStorage",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

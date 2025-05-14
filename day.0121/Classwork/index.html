@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend List</title>
+</head>
+<body>
+
+  <h1>Friend List</h1>
+  <div id="friend-list">Loading...</div>
+
+  <script>
+    const friendListContainer = document.getElementById('friend-list');
+
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(users => {
+        // სიის გასუფთავება
+        friendListContainer.innerHTML = '';
+
+        users.forEach(user => {
+          const friendDiv = document.createElement('div');
+
+          // ვამატებთ სახელსა და ელფოსტას
+          friendDiv.innerHTML = `
+            <p><strong>${user.name}</strong></p>
+            <p>${user.email}</p>
+            <hr>
+          `;
+
+          friendListContainer.appendChild(friendDiv);
+        });
+      })
+      .catch(error => {
+        friendListContainer.innerHTML = 'დაფიქსირდა შეცდომა მონაცემების მიღებისას.';
+        console.error(error);
+      });
+  </script>
+
+</body>
+</html>
