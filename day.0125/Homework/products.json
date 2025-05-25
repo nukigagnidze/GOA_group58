@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Men's T-Shirt",
+    "price": 29.99,
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Women's Jacket",
+    "price": 59.99,
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Smartwatch",
+    "price": 149.99,
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/71YwU6jk-hL._AC_UL640_QL65_ML3_.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Diamond Ring",
+    "price": 199.99,
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
+  }
+]
