@@ -1,1 +1,0 @@
-# aq classworki ar gvqonda
