@@ -1,0 +1,1 @@
+# 1) შემდეგ გაკვეთილამდე გადაიმეორეთ expo-router, Basic authentication flow
